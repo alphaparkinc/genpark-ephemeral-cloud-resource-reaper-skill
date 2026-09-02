@@ -1,0 +1,39 @@
+{
+  "name": "genpark-ephemeral-cloud-resource-reaper-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Ephemeral cloud resource reaper auditing idle instances, unattached disks, and dangling staging containers to minimize FinOps waste.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "cloud-finops",
+  "tags": [
+    "cloud-finops",
+    "resource-reaper",
+    "karpenter",
+    "idle-cleanup",
+    "cloud-custodian"
+  ],
+  "inputs": {
+    "max_idle_age_hours": {
+      "type": "integer"
+    },
+    "target_resource_tags": {
+      "type": "object"
+    }
+  },
+  "outputs": {
+    "reaper_execution_id": {
+      "type": "string"
+    },
+    "idle_resources_discovered_count": {
+      "type": "integer"
+    },
+    "projected_monthly_cost_saved_usd": {
+      "type": "number"
+    },
+    "reaper_audit_manifest_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
